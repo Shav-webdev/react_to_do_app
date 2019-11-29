@@ -30,9 +30,16 @@ class App extends React.Component {
 
     componentDidMount() {
         let list = localStorage.getItem("listOfItems")
-        this.setState({
-            list: JSON.parse(list),
-        })
+        if(list) {
+            this.setState({
+                list: JSON.parse(list),
+            })
+        }else {
+            this.setState({
+                list: [],
+            })
+        }
+
 
     }
 

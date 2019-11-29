@@ -42,7 +42,7 @@ function AppMain(props) {
 
     return (
         <List dense className={classes.root}>
-            {listArr.map((listItem, index ) => {
+            {(listArr.length) ? (listArr.map((listItem, index ) => {
                 const labelId = `checkbox-list-label-${index}`;
                 return (
                     <ListItem
@@ -64,7 +64,7 @@ function AppMain(props) {
                         </ListItemSecondaryAction>
                     </ListItem>
                 );
-            })}
+            })):(<h1 align="center">Add new to do item</h1>)}
         </List>
     );
 }
